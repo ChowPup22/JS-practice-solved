@@ -6,6 +6,11 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
+  const planets = data.planets.filter((planet) => planet.moonsCount > 0);
+
+  const moonCount = planets.reduce((acc, planet) => acc + parseInt(planet.moonsCount), 0);
+
+  return moonCount;
 }
 
 
